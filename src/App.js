@@ -1,14 +1,17 @@
-import logo from './logo.svg';
+import Container from 'react-bootstrap/Container';
 import './App.css';
+import OrderEntry from './pages/entry/OrderEntry';
+import { OrderDetailsProvider } from './contexts/OrderDetails';
 import SummaryForm from './pages/summary/SummaryForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <SummaryForm />
-      </header>
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        {/* Summary page and entry page need provider */}
+        <OrderEntry />
+      </OrderDetailsProvider>    
+    </Container>
   );
 }
 
